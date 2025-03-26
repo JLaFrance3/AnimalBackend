@@ -4,6 +4,7 @@
 import fs from 'node:fs/promises';
 import sha256 from 'js-sha256';
 import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 
 // Get data from file and return a converted JSON object
 async function getData() {
@@ -29,9 +30,8 @@ async function getUsers() {
 
 // Verify and decode auth token
 function verifyToken(token) {
-    const key = '987654321';
     try {
-        const decodedToken = jwt.verify(token, key);
+        const decodedToken = jwt.verify(token, process.env.KEY);
         return decodedToken;
     } catch (err) {
         console.error("Invalid token");
@@ -86,11 +86,8 @@ export async function login(username, password) {
         const data = {
             userId: user.id
         }
-        //Define key
-        //TODO: environmental variable
-        const key = '987654321';
-        //Token
-        const token = jwt.sign(data, key, { expiresIn: '1hr' });
+        //Create token
+        const token = jwt.sign(data, process.env.KEY, { expiresIn: '1hr' });
 
         console.log(token);
     }
