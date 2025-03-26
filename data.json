@@ -1,0 +1,38 @@
+{
+    "animals": [
+        {
+            "id": 0,
+            "createdByUser": 0,
+            "name": "Donkey",
+            "sciName": "Equus asinus",
+            "description": [
+                "The donkey or ass is a domesticated equine.",
+                "It derives from the African wild ass.",
+                "There are more than 40 million donkeys in the world, mostly in underdeveloped countries, where they are used principally as draught or pack animals."
+            ],
+            "images": [
+                "https://upload.wikimedia.org/wikipedia/commons/1/1a/Donkey_in_Clovelly%2C_North_Devon%2C_England.jpg",
+                "https://www.peta.org.uk/wp-content/uploads/2020/02/donkey-happy_pixabay.jpg"
+            ],
+            "events": [
+                {
+                    "name": "DEEP DONKEY",
+                    "date": "03/26/2025",
+                    "url": "https://www.google.com/search?q=deep+donkey,+the+cutting+room,+9+apr&oq=donkey+events&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCDIzNjVqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8&si=APYL9bvbTYBlvjo9HgsKokb80VOuw9zV-z5EXyhbMKCadi8RhwjIzeJof0oZqi3TTx0AdAH1oh3B3D8hhSuhCsr1dkN6mAo7N-RynghI9qirDKZjW1u8dkB3Hf65jgWKmh6t6joSt_0F3KB2GWj4tll_zPYQrCSE5EcGvOqM4FlGMBMsW5LO23Zv-BztvCYds40T5_O9f9Ez5DHMFKUggtnF19sdlM-tqQ%3D%3D&source=ev.im&sa=X&ved=2ahUKEwiW15Osn6iMAxU2K1kFHXoUE6gQsdoCegQINhAB#&sxsrf=AHTn8zrLoW1lCdQffxHR4PXvDvFj1rvhbg:1743009222034"
+                },
+                {
+                    "name": "Bad Donkey Run",
+                    "date": "03/30/2025",
+                    "url": "https://www.google.com/search?q=september+bad+donkey+run+5k/10k/13.1+nyc,+hudson+river+waterfront+greenway,+21+sep&oq=donkey+events&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCDIzNjVqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8&si=APYL9bvbTYBlvjo9HgsKokb80VOuw9zV-z5EXyhbMKCadi8Rh04iiWOSXDJmDT1LQHQAXLstVN0SjvUhqASA04uHgKv58lWtC7sHu-fQ5ag3GHJWlAEjU2gX_SCbrNJs0mMjxJ8k_GRIVZTjAMHx8_C_Haqc1xiFgUJwMCt2lRiXcfM1s9WVPQ3fv28ufZXr2B4aSMQdgPxnUmDVfmC5axM3B9YL4EnZLkCV3Vz6GIBs6q1ITWMSt3N3ESh153VBLxSspIkwhIK4oWX09vpK7lPUKgwzM0V3fA%3D%3D&source=ev.im&sa=X&ved=2ahUKEwiW15Osn6iMAxU2K1kFHXoUE6gQsdoCegQINRAB#&sxsrf=AHTn8zrLoW1lCdQffxHR4PXvDvFj1rvhbg:1743009222034"
+                }
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": 0,
+            "hash": "8da193366e1554c08b2870c50f737b9587c3372b656151c4a96028af26f51334",
+            "name": "Admin Admin"
+        }
+    ]
+}
