@@ -1,5 +1,5 @@
 import express from 'express'
-import { handleRequest } from './index.js'
+import { handleRequest } from '../src/index.js'
 
 const app = express();
 const port = 3000;

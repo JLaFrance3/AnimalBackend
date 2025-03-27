@@ -60,7 +60,6 @@ function isValidAnimal(animalData) {
     // All required fields
     const requiredFields = ['name', 'sciName', 'description', 'images', 'events'];
     const missingFields = requiredFields.filter(field => !(field in animalData));
-
     if (missingFields.length > 0) {
         console.error(`Error 400. Bad request: Missing ${missingFields} fields`);
         return false;
@@ -172,13 +171,13 @@ export async function createAnimal(authToken, animalJSON) {
     
     // Provide animal unique id
     const animals = await getAnimals();
-    let uniqueID;
+    let uniqueID = 0;
     if (animals) {
         let maxID = 0;
         animals.forEach(animal => {
             maxID = Math.max(animal.id, maxID);
         });
-        uniqueID = maxID++;
+        uniqueID = ++maxID;
     }
     
     // Add uniqueID and createdByUser to animalData
