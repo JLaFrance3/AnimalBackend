@@ -19,8 +19,15 @@ async function getDataFromFile() {
 // Add animal to file
 async function writeAnimalToFile(animalData) {
     try {
-        const animalJSON = JSON.stringify(animalData);
-        await fs.writeFile('data.json', animalJSON);
+        let jsonData = await getDataFromFile();
+        if (jsonData) {
+            // Add new animal to "animals" in json object
+            jsonData.animals.push(animalData)
+
+            // Convert back to string and write to file
+            const animalJSON = JSON.stringify(jsonData, null, 4);
+            await fs.writeFile('data.json', animalJSON);
+        }
     } catch (err) {
         console.error(err);
     }
@@ -83,13 +90,11 @@ function isValidAnimal(animalData) {
 
     // Validate events
     const events = animalData.events;
-    const reqEventFields = ['name', 'data', 'url'];
-    const dateRegex = new RegExp('/^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/');
-    events.forEach(event => {
-
+    const reqEventFields = ['name', 'date', 'url'];
+    for (const event of events) {
         // Events must have required fields
-        const missingEventFields = reqEventFields.filter(field => !(field in events));
-        if (missingFields.length > 0) {
+        const missingEventFields = reqEventFields.filter(field => !(field in event));
+        if (missingEventFields.length > 0) {
             console.error(`Error 400. Bad request: Missing ${missingEventFields} fields`);
             return false;
         }
@@ -104,13 +109,14 @@ function isValidAnimal(animalData) {
             return false;
         }
 
-        // Date in mm/dd/yyyy format
-        if (!dateRegex.test(event.date)) {
+        // Input date must match mm/dd/yyyy regex
+        if (!event.date.match(/^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}$/)) {
             console.error('Error 400. Bad request: Event date format must be mm/dd/yyyy')
+            return false;
         }
+    }
 
-        return true;
-    });
+    return true;
 }
 
 // Display all animal objects to console
@@ -157,7 +163,12 @@ export async function createAnimal(authToken, animalJSON) {
     const animalData = JSON.parse(animalJSON);
 
     // Validate animal information
-    if (isValidAnimal(animalData)) return;
+    if (isValidAnimal(animalData)) {
+        console.log(`Successfully created ${animalData.name}`)
+    }
+    else {
+        return;
+    }
     
     // Provide animal unique id
     const animals = await getAnimals();

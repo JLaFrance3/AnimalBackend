@@ -23,8 +23,7 @@ export async function handleRequest(args) {
                     await displayOne(args[2]);
                     break;
                 case 'create':
-                    console.log(typeof args[3]);
-                    console.log("Log:\n" + args[3]);
+                    console.log();
                     await createAnimal(args[2], args[3]);
                     break;
                 // Command not recognized, throw error

@@ -26,6 +26,33 @@
                     "url": "https://www.google.com/search?q=september+bad+donkey+run+5k/10k/13.1+nyc,+hudson+river+waterfront+greenway,+21+sep&oq=donkey+events&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCDIzNjVqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8&si=APYL9bvbTYBlvjo9HgsKokb80VOuw9zV-z5EXyhbMKCadi8Rh04iiWOSXDJmDT1LQHQAXLstVN0SjvUhqASA04uHgKv58lWtC7sHu-fQ5ag3GHJWlAEjU2gX_SCbrNJs0mMjxJ8k_GRIVZTjAMHx8_C_Haqc1xiFgUJwMCt2lRiXcfM1s9WVPQ3fv28ufZXr2B4aSMQdgPxnUmDVfmC5axM3B9YL4EnZLkCV3Vz6GIBs6q1ITWMSt3N3ESh153VBLxSspIkwhIK4oWX09vpK7lPUKgwzM0V3fA%3D%3D&source=ev.im&sa=X&ved=2ahUKEwiW15Osn6iMAxU2K1kFHXoUE6gQsdoCegQINRAB#&sxsrf=AHTn8zrLoW1lCdQffxHR4PXvDvFj1rvhbg:1743009222034"
                 }
             ]
+        },
+        {
+            "id": 0,
+            "createdByUser": 0,
+            "name": "Tibetan Blackbird",
+            "sciName": "Turdus maximus",
+            "description": [
+                "Species of bird in the thrush family Turdidae.",
+                "Found in the Himalayas from northern Pakistan to southeastern Tibet.",
+                "The Tibetan blackbird is one of 65 species in the genus Turdus."
+            ],
+            "images": [
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Tibetan_Blackbird_%28Turdus_maximus%29%2C_Hunza%2C_Pakistan_%2822908217312%29.jpg/1280px-Tibetan_Blackbird_%28Turdus_maximus%29%2C_Hunza%2C_Pakistan_%2822908217312%29.jpg",
+                "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/181341421/320"
+            ],
+            "events": [
+                {
+                    "name": "Bird Walk",
+                    "date": "03/29/2025",
+                    "url": "https://thegreatelm.com/calendar-events/companion-bird-walk/"
+                },
+                {
+                    "name": "Bird Feeder Watching",
+                    "date": "03/28/2025",
+                    "url": "https://greenwich.audubon.org/events/feederwatch-fridays-9"
+                }
+            ]
         }
     ],
     "users": [
