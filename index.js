@@ -1,18 +1,18 @@
-import { displayAll, displayOne, createAnimal, login } from "./utils.js";
+import { displayAll, displayOne, createAnimal, login, accountDetails } from "./utils.js";
 
 //Get commands arguments
 const args = process.argv.slice(2)
 
-async function handleRequest(args) {
+export async function handleRequest(args) {
     if (args.length < 2) {
-        console.error('Invalid number of arguments');
+        console.error('Error 400. Bad request: Invalid number of arguments');
         return;
     }
 
-    const main = args[0];
+    const resource = args[0];
     const command = args[1];
 
-    switch (main) {
+    switch (resource) {
         // Handle animals commands
         case 'animals':
             switch (command) {
@@ -23,35 +23,37 @@ async function handleRequest(args) {
                     await displayOne(args[2]);
                     break;
                 case 'create':
+                    console.log(typeof args[3]);
+                    console.log("Log:\n" + args[3]);
                     await createAnimal(args[2], args[3]);
                     break;
+                // Command not recognized, throw error
                 default:
-                    console.error(`Unknown command: ${command}`);
+                    console.error(`Error 400. Bad request: Unknown command ${command}`);
                     return;
             }
+            break;
         // Handle user commands
         case 'user':
-            switch (command) {
-                case '':
-
-                    break;
-                default:
-                    console.error(`Unknown command: ${command}`);
-                    return;
-            }
+            await accountDetails(args[1]);
+            break;
         // Handle login commands
         case 'login':
             if (args.length < 3) {
-                console.error("Invalid number of arguments. Please provide username and password.");
+                console.error("Error 400. Bad request: Please provide username and password.");
                 return;
             }
             await login(args[1], args[2]);
             break;
-        // Main command not recognized, throw error
+        // Resource not recognized, throw error
         default:
-            console.error(`Unknown command: ${main}`);
+            console.error(`Error 400. Bad request: Unknown command ${resource}`);
             return;
     }
 }
 
-handleRequest(args);
+try {
+    handleRequest(args);
+} catch (err) {
+    console.error("Error 500. Internal error")
+}
