@@ -1,23 +1,24 @@
 import express from 'express'
-import { handleRequest } from '../src/index.js'
+import { displayAll, displayOne, createAnimal, login, accountDetails } from "../src/utils.js";
 
 const app = express();
 const port = 3000;
 
-app.get('/', (request, response) => {
-    return response.send('Hello World');
+app.get('/', (req, res) => {
+    return res.send('Hello World');
 });
 
-app.get('/animals', async (req, res) => {
-    const result = await handleRequest(['animals', 'all']);
+// Get animals
+app.get('/animals/all', async (req, res) => {
+    const result = await displayAll();
     res.status(200).json(result);
 });
 
+// Get one animal by ID
 app.get('/animals/:id', async (req, res) => {
     const id = req.params.id;
-    return res.status(200).json(animals);
-
-    //TODO: get animal by id, if id not valid 400, if animal not found 404, if animal found return animal
+    const result = await displayOne(id);
+    return res.status(200).json(result);
 });
 
 app.listen(port, () => {

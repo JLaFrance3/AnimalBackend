@@ -122,7 +122,9 @@ function isValidAnimal(animalData) {
 export async function displayAll() {
     const animals = await getAnimals();
     if (animals) {
-        console.log(animals);
+        //console.log does not properly output nested arrays
+        const animalOutput = JSON.stringify(animals, null, 4);
+        console.log(animalOutput);
     }
     else {
         console.error('Error 404. No animals found.')

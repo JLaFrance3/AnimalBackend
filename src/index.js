@@ -6,6 +6,7 @@ const args = process.argv.slice(2)
 export async function handleRequest(args) {
     if (args.length < 2) {
         console.error('Error 400. Bad request: Invalid number of arguments');
+        console.log(args);
         return;
     }
 
